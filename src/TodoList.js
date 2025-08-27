@@ -27,10 +27,9 @@ export default function TodoList() {
                         </td>
                         <td>
                             <button
-                                className="button is-success"
+                                className={`button ${item.done ? "is-primary" : "is-danger"}`}
                                 title="Done"
-                                disabled={item.done}
-                                onClick={() => {handleDoneClick(item.key)}}
+                                onClick={() => handleDoneClick(item.key)}
                             >
                                 &#9745;
                             </button>

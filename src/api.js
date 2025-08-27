@@ -33,7 +33,7 @@ export function actTodo({ params, request }) {
     const key = +params.key;
     const todo = todos.findIndex(current => current.key === key);
     if (request.method === 'PATCH')
-        todos[todo].done = true;
+        todos[todo].done = todos[todo].done ? false : true;
     else
         todos.splice(todo, 1);
     return redirect('/');
